@@ -6,65 +6,94 @@ import logo from './CAM5.jpg';
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');
   const [showSubMenu, setShowSubMenu] = useState(false);
-  const [showSubMenuOnSlideChange, setShowSubMenuOnSlideChange] = useState(false);
 
   const handleCategoryClick = (category) => {
-    if (category === selectedCategory) {
-      setShowSubMenu(!showSubMenu);
-      setShowSubMenuOnSlideChange(!showSubMenuOnSlideChange);
-    } else {
-      setSelectedCategory(category);
-      setShowSubMenu(true);
-      setShowSubMenuOnSlideChange(true);
-    }
+    setSelectedCategory(category);
+    setShowSubMenu(true);
   };
 
-  const handleSlideChange = () => {
-    if (showSubMenuOnSlideChange) {
-      setShowSubMenu(false);
-    }
+  const handleBackClick = () => {
+    setSelectedCategory('');
+    setShowSubMenu(false);
   };
 
-  const categoryButtons = ['Centro de Atención Múltiple (CAM)', 'Educación Inicial', 'Preescolar', 'Primaria', 'Secundaria'];
+  const categoryButtons = ['Centro de Atención Múltiple (CAM)'];
 
   const categoryInfo = {
     'Centro de Atención Múltiple (CAM)': (
-      <p>
-        Los Centros de Atención Múltiple (CAM) son servicios escolarizados que atienden a alumnas y alumnos con discapacidad, discapacidad múltiple y Trastorno del Espectro Autista (TEA) en situaciones excepcionales, los cuales requieren de ajustes razonables significativos y en ocasiones de apoyos no solo más especializados sino permanentes. Estos centros ofrecen formación para la vida y a lo largo de la misma, así como el desarrollo de su autonomía e independencia, a través del tránsito de los niveles de educación inicial, preescolar, primaria y secundaria.
-      </p>
+      <div>
+        <p>
+          Los Centros de Atención Múltiple (CAM) son servicios escolarizados que atienden a alumnas y alumnos con discapacidad, discapacidad múltiple y Trastorno del Espectro Autista (TEA) en situaciones excepcionales, los cuales requieren de ajustes razonables significativos y en ocasiones de apoyos no solo más especializados sino permanentes. Estos centros ofrecen formación para la vida y a lo largo de la misma, así como el desarrollo de su autonomía e independencia, a través del tránsito de los niveles de educación inicial, preescolar, primaria y secundaria.
+        </p>
+        <div className="sub-links">
+          <button onClick={() => handleCategoryClick('Discapacidad Intelectual')}>Discapacidad Intelectual</button>
+          <button onClick={() => handleCategoryClick('Discapacidad Motriz')}>Discapacidad Motriz</button>
+          <button onClick={() => handleCategoryClick('Discapacidad Auditiva')}>Discapacidad Auditiva</button>
+          <button onClick={() => handleCategoryClick('Discapacidad Visual')}>Discapacidad Visual</button>
+          <button onClick={() => handleCategoryClick('Discapacidad Múltiple')}>Discapacidad Múltiple</button>
+          <button onClick={() => handleCategoryClick('Autismo')}>Trastorno del Espectro Autista (TEA)</button>
+        </div>
+      </div>
     ),
-    'Educación Inicial': (
-      <p>
-        Tiene como propósito favorecer el desarrollo motor, físico, cognitivo, afectivo y social de los menores de cuatro años de edad. Incluye orientación a padres de familia o tutores para la educación de sus hijas, hijos o pupilos.
-      </p>
+    // ... Códigos de las demás categorías ...
+  };
+
+  const categoryDetails = {
+    'Discapacidad Intelectual': (
+      <div>
+        <p>La discapacidad intelectual puede presentarse en el ser humano antes del nacimiento, durante 
+el parto o durante los cinco primeros años de vida, como resultado de altas temperaturas que 
+producen meningitis y convulsiones, es decir, contracciones violentas e involuntarias que afectan 
+el funcionamiento del cerebro; también por un traumatismo derivado de un golpe fuerte en el cerebro, que ocasiona diferentes formas y características de la discapacidad intelectual. Las discapacidades de tipo intelectual más comunes son:
+<p>• Síndrome de Down. Se trata de una alteración genética ocasionada por la presencia de un 
+cromosoma extra en el par 21, y se produce durante la división celular en el momento de 
+la gestación, sin que alguno de los padres sea responsable de que esto suceda. Los niños 
+con síndrome de Down presentan rasgos físicos similares, de modo que se parecen mucho 
+entre sí, y enfrentan una condición de vida diferente, no una enfermedad. Tres características distinguen a los niños: bajo tono muscular, discapacidad intelectual y retardo en el 
+lenguaje.
+Las alteraciones cromosómicas llevan el apellido del médico que las descubrió, en este 
+caso el doctor John Langdon Down (en 1866); otros síndromes, los de Raid y West, aunque poco comunes, también conllevan discapacidad intelectual. Síndrome significa conjunto de características</p>.
+• Hidrocefalia (cráneo demasiado grande) o microcefalia (cráneo pequeño). Son más visibles 
+y también provocan discapacidad intelectual; sin embargo, es poco el porcentaje en que 
+se presentan.
+Hay niños que en su apariencia física no parecen sufrir problemas, pero manifiestan una discapacidad intelectual severa, moderada o leve en su aprendizaje, lenguaje, forma de relacionarse, atención, comprensión y retención, lo que se traduce en necesidades educativas especiales que requieren satisfactores adecuados al nivel de esas necesidades.</p>
+      </div>
     ),
-    Preescolar: (
-      <p>
-        Es el primer nivel de la educación básica. Busca el desarrollo integral y equilibrado que facilita la relación de los niños con sus pares y con adultos. Promueve la socialización y la afectividad, las capacidades de comunicación, el pensamiento matemático, el conocimiento de los entornos natural y social, el desarrollo y enriquecimiento físico y psicomotriz, y la expresión artística.
-      </p>
+    'Discapacidad Motriz': (
+      <div>
+        <p>La alteración 
+del aparato motor que dificulta o imposibilita el desarrollo de capacidades que permitan participar 
+en actividades propias de la vida cotidiana, como estar de pie, caminar, desplazarse, tomar y 
+manipular objetos con las manos, hablar, hacer gestos, entre otras acciones que requieren 
+movimiento y control de la postura corporal. La alteración es causada por un funcionamiento 
+deficiente del sistema nervioso, del sistema muscular y de los sistemas óseo - articulatorio o de una 
+interrelación de los tres sistemas, lo cual dificulta o imposibilita la movilidad funcional de algunas de 
+las partes del cuerpo.</p>
+      </div>
     ),
-    Primaria: (
-      <p>
-         Es el segundo nivel del tipo de educación básica. Su 
-objetivo es sentar las bases en áreas 
-fundamentales para la adquisición 
-de conocimientos posteriores, esto 
-es, el dominio de la lectoescritura, el 
-conocimiento matemático aritmético 
-y geométrico, el conocimiento básico 
-de las ciencias naturales y sociales, el 
-conocimiento del cuerpo, las posibilidades motrices y las emociones, las 
-artes y las relaciones interpersonales.
-      </p>
+    'Discapacidad Auditiva': (
+      <div>
+        <p>Los niños con discapacidad auditiva enfrentan dificultad para adquirir el lenguaje. El lenguaje es 
+una forma de conceptualizar el mundo, entenderlo y explicarlo; también, uno de los medios que 
+nos permiten adquirir conocimientos e información acerca de nuestras experiencias y de los demás.
+A un niño con pérdida auditiva que no logra desarrollar un lenguaje le será muy difícil adquirir 
+conocimientos y comprender los eventos a su alrededor. </p>
+      </div>
     ),
-    Secundaria: (
-      <p>
-         Es el tercer nivel del tipo de educación básica. Su 
-objetivo es ofrecer conocimientos y habilidades avanzados, que consoliden 
-los procesos iniciados en los niveles 
-anteriores, y que sienten bases para 
-las áreas especializadas que se estudian en la educación media superior
-      </p>
+    'Discapacidad Visual': (
+      <div>
+        <p>Información sobre Discapacidad Visual</p>
+      </div>
+    ),
+    'Discapacidad Múltiple': (
+      <div>
+        <p>Información sobre Discapacidad Múltiple</p>
+      </div>
+    ),
+    'Trastorno del Espectro Autista (TEA)': (
+      <div>
+        <p></p>
+      </div>
     ),
   };
 
@@ -78,12 +107,6 @@ las áreas especializadas que se estudian en la educación media superior
             <h2>"Jorge Nieblas Pino"</h2>
           </div>
         </div>
-        <div className="nav-buttons">
-          <button onClick={() => handleCategoryClick('Inicio')}>Inicio</button>
-          <button onClick={() => handleCategoryClick('Registrar')}>Registrar</button>
-          <button onClick={() => handleCategoryClick('Entrar')}>Entrar</button>
-          <button onClick={() => handleCategoryClick('Contacto')}>Contacto</button>
-        </div>
       </header>
       <div className="category-buttons">
         {categoryButtons.map((category) => (
@@ -92,10 +115,9 @@ las áreas especializadas que se estudian en la educación media superior
           </button>
         ))}
       </div>
-      {showSubMenu && selectedCategory !== 'Inicio' && selectedCategory !== 'Registrar' && selectedCategory !== 'Entrar' && selectedCategory !== 'Contacto' && (
+      {showSubMenu && (
         <div className="sub-menu">
-          {/* Mostrar cuadro de texto con información */}
-          {categoryInfo[selectedCategory]}
+          {categoryDetails[selectedCategory] || categoryInfo[selectedCategory]}
         </div>
       )}
     </div>
@@ -105,6 +127,8 @@ las áreas especializadas que se estudian en la educación media superior
 export default App;
 
 // Resto del código CSS ...
+
+
 
 
 
