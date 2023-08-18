@@ -17,7 +17,7 @@ function App() {
     setShowSubMenu(false);
   };
 
-  const categoryButtons = ['Centro de Atención Múltiple (CAM)'];
+  const categoryButtons = ['Centro de Atención Múltiple (CAM)','Conócenos' ];
 
   const categoryInfo = {
     'Centro de Atención Múltiple (CAM)': (
@@ -34,9 +34,25 @@ function App() {
           <button onClick={() => handleCategoryClick('Autismo')}>Trastorno del Espectro Autista (TEA)</button>
         </div>
       </div>
+    )
+    ,'Conócenos': (
+        <div>
+          <p>
+          El Centro de Atención Múltiple No.5 "Jorge Nieblas Pino", de la zona 11B de Educación Especial de Caborca, Sonora, es un espacio dedicado a brindar educación especializada a estudiantes con diversas necesidades. Nuestro compromiso es ofrecer un entorno inclusivo y de calidad, adaptado a las particularidades de cada alumno, promoviendo su desarrollo académico, social y emocional. A través de un equipo multidisciplinario y recursos especializados, trabajamos para empoderar a nuestros estudiantes y facilitar su participación activa en la sociedad. Conoce nuestros niveles educativos.
+          </p>
+          <div className="sub-links">
+            <button onClick={() => handleCategoryClick('Educación Inicial')}>Educación Inicial</button>
+            <button onClick={() => handleCategoryClick('Educación Preescolar')}>Educación Preescolar</button>
+            <button onClick={() => handleCategoryClick('Educación Primaria')}>Educación Primaria</button>
+            <button onClick={() => handleCategoryClick('Educación Secundaria')}>Educación Secundaria</button>
+            <button onClick={() => handleCategoryClick('Talleres')}>Talleres</button>
+            
+          </div>
+        </div>
     ),
     // ... Códigos de las demás categorías ...
   };
+  
 
   const categoryDetails = {
     'Discapacidad Intelectual': (
@@ -93,6 +109,21 @@ conocimientos y comprender los eventos a su alrededor. </p>
     'Trastorno del Espectro Autista (TEA)': (
       <div>
         <p></p>
+      </div>
+    ),
+    'Educación Inicial': (
+      <div>
+        <p>El objetivo general de la educación inicial es potenciar el desarrollo integral de niñas y niños de cero a tres años en un 
+ambiente rico en experiencias afectivas, educativas y sociales, y el 
+acompañamiento a las familias en las prácticas de crianza</p>
+<p>Quien está a cargo de educación inicial en el CAM No.5 es la maestra " "</p>
+      </div>
+    ),
+    'Educación Preescolar':(
+      <div>
+        <p>El objetivo de la educación preescolar es favorecer el desarrollo de distintos tipos de lenguajes a través del juego, el canto, 
+la lectura, y diversas expresiones artísticas que se realizan en interacción con otros niños y 
+niñas.</p>
       </div>
     ),
   };
