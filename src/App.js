@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import "slick-carousel/slick/slick.css"; // Importa los estilos de react-slick
+import "slick-carousel/slick/slick-theme.css"; // Importa los estilos de react-slick
+import Slider from 'react-slick'; // Importa el componente Slider de react-slick
 
 import logo from './CAM5.jpg';
 
@@ -17,8 +20,7 @@ function App() {
     setShowSubMenu(false);
   };
 
-  const categoryButtons = ['Centro de Atención Múltiple (CAM)','Conócenos' ];
-
+  const categoryButtons = ['Centro de Atención Múltiple (CAM)','Conócenos','Escuela para Padres' ];
   const categoryInfo = {
     'Centro de Atención Múltiple (CAM)': (
       <div>
@@ -50,9 +52,42 @@ function App() {
           </div>
         </div>
     ),
+        'Escuela para Padres': (
+          <div>
+            <p>Selecciona un video:</p>
+            <div className="video-carousel">
+              <Slider>
+                <div>
+                  
+                </div>
+                <div>
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/VIDEO_ID_2"
+                    title="Video 2"
+                    frameBorder="0"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+                {/* Agrega más iframes de videos aquí */}
+              </Slider>
+            </div>
+          </div>
+        ),
     // ... Códigos de las demás categorías ...
   };
-  
+  const videoThumbnails = [
+    "https://img.youtube.com/vi/WZj97uGQ37I/0.jpg", // URL de la miniatura del primer video
+    "https://img.youtube.com/vi/VIDEO_ID_2/0.jpg",   // URL de la miniatura del segundo video
+    // Agrega más URLs de miniaturas de videos aquí
+  ];
+
+  const videoUrls = [
+    "https://www.youtube.com/embed/WZj97uGQ37I", // URL del primer video de YouTube
+    "https://www.youtube.com/embed/VIDEO_ID_2",   // URL del segundo video de YouTube
+    // Agrega más URLs de videos de YouTube aquí
+  ];
 
   const categoryDetails = {
     'Discapacidad Intelectual': (

@@ -6,6 +6,7 @@ body {
 
 .App {
   text-align: justify;
+  padding: 20px;
 }
 
 .App-header {
@@ -59,17 +60,45 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
-  padding: 20px; /* Agregamos padding para enmarcar los textos */
-  border: 1px solid #ccc; /* Agregamos un borde para enmarcar los textos */
-  background-color: #fff; /* Fondo blanco para los cuadros de texto */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra para los cuadros de texto */
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .sub-menu button {
   margin: 5px;
 }
 
-/* Resto del código CSS ... */
+.video-carousel {
+  width: 100%;
+  max-width: 600px; /* Ajusta el ancho máximo según tus necesidades */
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajustes para los videos dentro del carrusel */
+.video-carousel iframe {
+  width: 100%;
+  height: 400px; /* Ajusta la altura de acuerdo a tus necesidades */
+  border: none;
+}
+
+/* Ajustes para dispositivos móviles */
+@media (max-width: 768px) {
+  .category-buttons button,
+  .sub-menu button {
+    width: 100%;
+  }
+  
+  .video-carousel iframe {
+    height: 250px; /* Ajusta la altura de acuerdo a tus necesidades para dispositivos móviles */
+  }
+}
+
+
+
 
 
 
